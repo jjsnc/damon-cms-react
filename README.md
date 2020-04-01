@@ -3,14 +3,15 @@
     `yarn install`
 
     `yarn start`
-        
-    访问地址 http://localhost:3000
 
     `yarn build`
 
 项目目录
 
 public
+    favicon.ico ------ 浏览器头部logo
+    index.html  ------ 入口html页面
+    logo192.png ------ logo
 
 src  
  
