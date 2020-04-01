@@ -1,14 +1,12 @@
 项目介绍
 
-### `yarn start`
+    `yarn install`
 
-### `yarn start`
+    `yarn start`
         
-        访问地址 http://localhost:3000
+    访问地址 http://localhost:3000
 
-### `yarn build`
-
-
+    `yarn build`
 
 项目目录
 
