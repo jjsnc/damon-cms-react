@@ -28,4 +28,4 @@ yarn.lock ------ 项目依赖安装包版本号
 
 
 
-react 生态:  react + react-router + redux + axios + babel + webpack
+react 生态:  react + react-router + redux + axios + react-transition-group + babel + webpack
