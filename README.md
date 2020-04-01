@@ -11,13 +11,12 @@
 public
     favicon.ico ------  浏览器头部logo
     index.html  ------  项目首页模板
-    logo192.png ------  图片
-    manifest.json   ------  PWA serviceWoker 网页用户访问存储到手机的参数配置 
+    manifest.json   ------  PWA serviceWoker 网页用户访问存储到手机的参数配置 在后台管理项目中没有作用
 
 src
     index.js    -----   程序入口文件
 
- node_modules   ------  依赖第三方包文件
+node_modules   ------  依赖第三方包文件
 
 .gitignore  ------ git 忽略文件
 
