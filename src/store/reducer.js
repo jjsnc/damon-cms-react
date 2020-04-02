@@ -1,7 +1,7 @@
-const defaultState = {
-    inputValue: "world",
-    list: [1, 2, 3]
-}
-export default (state = defaultState, action) => {
-    return state
-}
+import { combineReducers } from 'redux-immutable'
+
+import {reducer as homeReducer } from '../pages/home/store/'
+
+export  default combineReducers({
+	home:homeReducer,
+})

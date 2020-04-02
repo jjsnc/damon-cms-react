@@ -9,15 +9,24 @@
 工程目录
 
     public
-        favicon.ico     ------  浏览器头部logo
-        index.html      ------  项目首页模板
-        manifest.json   ------  PWA serviceWoker 网页用户访问存储到手机的参数配置 在后台管理项目中没有作用
+        favicon.ico     ------   浏览器头部logo
+        index.html      ------   项目首页模板
+        manifest.json   ------   PWA serviceWoker 网页用户访问存储到手机的参数配置 在后台管理项目中没有作用
+        api
+            headerList.json ------  测试数据
+            home.json       ------  测试数据
+
 
     src
         index.js        ------   程序入口文件
 
     pages               ------   各个展示页面
         home
+            store       ------   存储单独页面数据
+                actionCreators.js
+                constants.js
+                index.js
+                reducer.js
             index.js    ------   home页面
 
     store
@@ -36,4 +45,4 @@
 
 
 
-    react 生态:  react + redux  + react-router + axios + react-transition-group + babel + webpack
+    react 生态:  react + redux  + react-router + redux-immutable + immutable +  axios + react-transition-group + babel + webpack
