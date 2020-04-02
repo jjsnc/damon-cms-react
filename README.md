@@ -28,4 +28,4 @@
 
 
 
-react 生态:  react + react-router + redux + axios + react-transition-group + babel + webpack
+    react 生态:  react + redux  + react-router + axios + react-transition-group + babel + webpack

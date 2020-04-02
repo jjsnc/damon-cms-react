@@ -1,14 +1,15 @@
 import React from 'react';
-// import 'antd/dist/antd.css';
-import { Button } from 'antd';
+import store from './store';
+import { Provider } from 'react-redux';
+import Home from './pages/home'
 function App() {
   return (
-    <div className="App">
-      <Button type="primary">Primary</Button>
-      <Button>Default</Button>
-      <Button type="dashed">Dashed</Button>
-      <Button type="link">Link</Button>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        hello world
+        <Home></Home>
+     </div>
+    </Provider>
   );
 }
 
