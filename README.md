@@ -18,17 +18,17 @@
 
     pages               ------   各个展示页面
         home
-            index.js    ------ home页面
+            index.js    ------   home页面
 
     store
-        index.js        ------  redux 入口文件
-        reducer.js      ------  改变state函数  
+        index.js        ------   redux 入口文件
+        reducer.js      ------   改变state函数  
 
-    node_modules        ------  依赖第三方包文件
+    node_modules        ------   依赖第三方包文件
 
-    .gitignore          ------ git 忽略文件
+    .gitignore          ------   git 忽略文件
 
-    package.json        ------  node包文件
+    package.json        ------   node包文件
 
     README.md
 
