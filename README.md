@@ -32,7 +32,7 @@
 
     README.md
 
-    yarn.lock           ------ 项目依赖安装包版本号
+    yarn.lock           ------   项目依赖安装包版本号
 
 
 
