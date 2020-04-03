@@ -1,15 +1,12 @@
-import React from 'react';
-import store from './store';
-import { Provider } from 'react-redux';
-import Home from './pages/home'
-function App() {
-  return (
-    <Provider store={store}>
-      <div className="App">
-        <Home></Home>
-     </div>
-    </Provider>
-  );
+import React, { Component } from 'react';
+class App extends Component {
+  render() {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
+  }
 }
 
 export default App;

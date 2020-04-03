@@ -45,4 +45,4 @@
 
 
 
-    react 生态:  react + redux  + react-router + redux-immutable + immutable +  axios + react-transition-group + babel + webpack
+    react 生态:  react + redux  + react-router-dom + redux-immutable + immutable +  axios + react-transition-group + babel + webpack
