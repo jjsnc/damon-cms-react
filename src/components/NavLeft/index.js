@@ -2,36 +2,30 @@ import React from 'react'
 import { Menu } from 'antd';
 import { NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-// import { switchMenu, saveBtnList } from './../../redux/action'
 import MenuConfig from './../../config/menuConfig'
 import './index.less'
-const SubMenu = Menu.SubMenu;
+const { SubMenu } = Menu;
 class NavLeft extends React.Component {
-    state = {
-        currentKey: ''
-    }
-    // 菜单点击
-    handleClick = ({ item, key }) => {
-  
+    constructor(props) {
+        super(props)
+        this.state = {
+            currentKey: ''
+        };
 
-        this.setState({
-            currentKey: key
-        });
-        // hashHistory.push(key);
-    };
-    componentDidMount(){
+    }
+    componentDidMount() {
         const menuTreeNode = this.renderMenu(MenuConfig);
         this.setState({
             menuTreeNode
         })
     }
     // 菜单渲染
-    renderMenu =(data)=>{
-        return data.map((item)=>{
-            if(item.children){
+    renderMenu = (data) => {
+        return data.map((item) => {
+            if (item.children) {
                 return (
                     <SubMenu title={item.title} key={item.key}>
-                        { this.renderMenu(item.children)}
+                        {this.renderMenu(item.children)}
                     </SubMenu>
                 )
             }
@@ -40,27 +34,20 @@ class NavLeft extends React.Component {
             </Menu.Item>
         })
     }
-    homeHandleClick = () => {
-        // const { dispatch } = this.props;
-        // dispatch(switchMenu('首页'));
-        this.setState({
-            currentKey: ""
-        });
-    };
     render() {
         return (
             <div>
                 <NavLink to="/home" onClick={this.homeHandleClick}>
                     <div className="logo">
-                        <img src="/assets/logo-ant.svg" alt=""/>
+                        <img src="/assets/logo-ant.svg" alt="" />
                         <h1>Imooc MS</h1>
                     </div>
                 </NavLink>
                 <Menu
-                    onClick={this.handleClick}
+                    mode="vertical"
                     theme="dark"
                 >
-                    { this.state.menuTreeNode }
+                    {this.state.menuTreeNode}
                 </Menu>
             </div>
         );

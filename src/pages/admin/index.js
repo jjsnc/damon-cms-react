@@ -1,25 +1,23 @@
 import React from 'react'
-import { Row,Col } from 'antd';
+import { Row, Col } from 'antd';
+import { connect } from 'react-redux'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
-import { connect } from 'react-redux'
 import NavLeft from '../../components/NavLeft'
 import '../../style/common.less'
-class Admin extends React.Component{
-
-    render(){
+class Admin extends React.Component {
+    render() {
         return (
             <Row className="container">
                 <Col span="4" className="nav-left">
-                    <NavLeft/>
+                    <NavLeft />
                 </Col>
                 <Col span="20" className="main">
-                    <Header/>
-                    <div className="content ">
-                        {/* <Home/> */}
+                    <Header />
+                    <div className="content">
                         {this.props.children}
                     </div>
-                    <Footer/>
+                    <Footer />
                 </Col>
             </Row>
         );
