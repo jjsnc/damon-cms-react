@@ -44,7 +44,8 @@ class NavLeft extends React.Component {
                     </div>
                 </NavLink>
                 <Menu
-                    mode="vertical"
+                    // mode="vertical"
+                    mode="inline"                   
                     theme="dark"
                 >
                     {this.state.menuTreeNode}
