@@ -10,18 +10,7 @@ import {
 } from 'antd';
 import './index.less'
 const { Option } = Select;
-const tailFormItemLayout = {
-    wrapperCol: {
-        xs: {
-            span: 24,
-            offset: 0,
-        },
-        sm: {
-            span: 16,
-            offset: 8,
-        },
-    },
-};
+
 
 const prefixSelector = (
     <Form.Item name="prefix"
@@ -54,7 +43,12 @@ export default class Register extends React.Component {
                     <img src='/assets/register-logo@2x.png' alt="官网注册logo" width="116" height="22"></img>
                 </div>
                 <div className="content">
+                    <div className="register-area">
+                        <h3 className="title-3">注 册</h3>
+                        <h5 className="title-5">欢迎注册AITIME账号</h5>
                     <RegisterForm />
+                    </div>
+
                 </div>
             </div>
         )
@@ -74,11 +68,10 @@ class RegisterForm extends React.Component {
                     ref={this.registerFormRef}
                     ame="control-ref"
                     onFinish={this.onFinish}
-                    {...tailFormItemLayout}
                     initialValues={{
                         prefix: '86',
                     }}
-                    style={{ width: '600px' }}
+          
                 >
                     <Form.Item
                         name="username"
@@ -210,16 +203,15 @@ class RegisterForm extends React.Component {
                         rules={[
                             { validator: (_, value) => value ? Promise.resolve() : Promise.reject('Should accept agreement') },
                         ]}
-                        {...tailFormItemLayout}
                     >
                         <Checkbox>
                             我已经阅读并同意<a href="htttp://www.baidu.com">服务协议</a>和<a href="htttp://www.baidu.com">隐私政策</a>
                         </Checkbox>
                     </Form.Item>
-                    <Form.Item {...tailFormItemLayout}>
+                    <Form.Item >
                         <Button type="primary" htmlType="submit"> Register</Button>
                     </Form.Item>
-                    <Form.Item {...tailFormItemLayout}>
+                    <Form.Item  >
                         <Button type="primary" > 登陆</Button>
                     </Form.Item>
                 </Form>
