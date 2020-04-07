@@ -15,10 +15,11 @@ export default class Login extends React.Component {
             <div className="login-page">
                 <div className="login-area">
                     <div className="logo">
-                        <img src='/assets/logo@2x.png' alt="官网logo" width="160" height="32"></img>
+                        <img src='/assets/logo@2x.png' alt="官网logo" width="322" height="62"></img>
                     </div>
                     <h6 className="title">运用大数据和人工智能技术，助力信用生活</h6>
                     <LoginForm />
+                    <h6 className="title-tips">还没有账号？<span className='go-btn'>立即注册</span></h6>
                 </div>
 
             </div>
@@ -32,9 +33,6 @@ class LoginForm extends React.Component {
         console.log(values);
         window.location.href = '/#/';
     };
-    onReset = () => {
-        this.formRef.current.resetFields();
-    };
     render() {
         return (
             <Form ref={this.formRef} name="control-ref" onFinish={this.onFinish}>
@@ -43,25 +41,37 @@ class LoginForm extends React.Component {
                     rules={[
                         {
                             required: true,
+                            message: '请输入用户名'
                         },
                     ]}
                 >
-                    <Input className="username"
-                     />
+                    <Input
+                        autoComplete="off"
+                        className="username"
+                        placeholder="请输入用户名"
+
+                    />
                 </Form.Item>
                 <Form.Item
                     name="password"
                     rules={[
                         {
                             required: true,
+                            message: '请输入密码'
+
                         },
                     ]}
                 >
-                    <Input className="password" />
+                    <Input
+                        type="password"
+                        autoComplete="off"
+                        className="password"
+                        placeholder="请输入密码"
+
+                    />
                 </Form.Item>
                 <Form.Item  >
-                    <Button htmlType="submit" type="primary"> Submit </Button>
-                    <Button htmlType="button" onClick={this.onReset}>Reset </Button>
+                    <Button htmlType="submit" type="primary" className={"submit-btn"}> 登陆 </Button>
                 </Form.Item>
             </Form>
         )

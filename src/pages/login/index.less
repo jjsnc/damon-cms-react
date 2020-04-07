@@ -1,47 +1,78 @@
 @import '../../style/default.less';
-input:-internal-autofill-selected  {
-    background: rgba(60, 120, 121, .14);
+input:-internal-autofill-selected {
+  background: rgba(60, 120, 121, .14);
 }
-.login-page{
-    width: 100vw;
-    height: 100vh;
-    background: url('../../images/login-bg@2x.png');
-    background-size: cover;
-    .login-area {
-      text-align: center;
-      width: 600px;
-      margin: 0 auto;
 
-      .ant-form-item-label > label {
-        color: #fff;
-      }
-      .logo {
-         padding-top: 200px;      
-      } 
-      .username {
-          width: 400px;
-          border-radius: 25px;
-          background: rgba(60, 120, 121, .14);
-          height: 50px;
-          line-height: 50px;
-          border: none;
-          outline: none;
-      }
-      .password {
-          width: 400px;
-          border-radius: 25px;
-          height: 50px;
-          line-height: 50px;
-          background: rgba(60, 120, 121, .14);
-          border: none;
-          outline: none;
-        
-      }
-      .title {
-          font-size: 12px;
-          color: #fff;
-          padding: 30px 0;
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  background: url('../../images/login-bg@2x.png');
+  background-size: cover;
+  .login-area {
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+    .ant-form-item-label>label {
+      color: #fff;
+    }
+    .logo {
+      padding-top: 200px;
+    }
+    .title {
+      font-size: 16px;
+      color: #fff;
+      padding: 28px 0 32px;
+    }
+    .ant-form-item-control {
+      margin-bottom: 8px;
+    }
+    .ant-form-item-explain {
+      color: #fff;
+      font-size: 12px; // text-align: left;
+      // padding-left: 100px;
+    }
+    input::placeholder {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .14);
+    }
+    .username {
+      width: 407px;
+      height: 52px;
+      background: rgba(255, 255, 255, .14);
+      border-radius: 26px;
+      padding-left: 10px;
+      border: none;
+      outline: none;
+      color: #fff;
+      padding-left: 20px;
+    }
+    .password {
+      width: 407px;
+      height: 52px;
+      background: rgba(255, 255, 255, .14);
+      border-radius: 26px;
+      padding-left: 10px;
+      border: none;
+      outline: none;
+      color: #fff;
+      padding-left: 20px;
+    }
+    .submit-btn {
+      width: 407px;
+      height: 52px;
+      background: rgba(23, 218, 163, .6);
+      border-radius: 26px;
+      font-size: 18px;
+      border: none;
+      outline: none;
+    }
+    .title-tips {
+      font-size: 18px;
+      color: #fff;
+      .go-btn {
+        color: #17DAA3;
+        cursor: pointer;
       }
     }
+  }
 }
-  
