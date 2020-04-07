@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Input, Button } from 'antd'
 import './index.less'
 
-
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 export default class Login extends React.Component {
     componentDidMount() {
         //每次进入登录页清除之前的登录信息
@@ -49,6 +49,7 @@ class LoginForm extends React.Component {
                         autoComplete="off"
                         className="username"
                         placeholder="请输入用户名"
+                        prefix={<UserOutlined className="site-form-item-icon" />}
 
                     />
                 </Form.Item>
@@ -67,6 +68,7 @@ class LoginForm extends React.Component {
                         autoComplete="off"
                         className="password"
                         placeholder="请输入密码"
+                        prefix={<LockOutlined className="site-form-item-icon" />}
 
                     />
                 </Form.Item>
