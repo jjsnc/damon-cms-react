@@ -2,6 +2,7 @@ import React from 'react'
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
 import App from '../App'
 import Login from '../pages/login'
+import Register from '../pages/register'
 import Admin from '../pages/admin'
 import Home from '../pages/home'
 import OrderDetail from "../pages/order/detail"
@@ -19,6 +20,7 @@ export default class ERouter extends React.Component {
                 <App>
                     <Switch>
                         <Route path='/login' component={Login}></Route>
+                        <Route path='/register' component={Register}></Route>
                         <Route path="/common" redenr={() =>
                             <Common>
                                 <Route path="/common/order/detail/:orderId" component={OrderDetail}></Route>
