@@ -46,7 +46,7 @@ export default class Register extends React.Component {
                     <div className="register-area">
                         <h3 className="title-3">注 册</h3>
                         <h5 className="title-5">欢迎注册AITIME账号</h5>
-                    <RegisterForm />
+                        <RegisterForm />
                     </div>
 
                 </div>
@@ -71,7 +71,7 @@ class RegisterForm extends React.Component {
                     initialValues={{
                         prefix: '86',
                     }}
-          
+
                 >
                     <Form.Item
                         name="username"
@@ -172,9 +172,25 @@ class RegisterForm extends React.Component {
                     </Form.Item>
                     <Form.Item
                         name="phone"
-                        rules={[{ required: true, message: 'Please input your phone number!' }]}
+                        rules={
+                            [
+                                { required: true, message: '请输入你的手机号码!' },
+                                {
+                                    pattern: new RegExp('^1[3456789]\\d{9}$', 'g'),
+                                    message: '请输入正确的手机号码'
+                                }
+
+                            ]
+
+                        }
+
+
                     >
-                        <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
+                        <Input
+                            addonBefore={prefixSelector}
+                            style={{ width: '100%' }}
+                            placeholder="手机号"
+                        />
                     </Form.Item>
                     <Form.Item
                         name="code"
@@ -184,15 +200,20 @@ class RegisterForm extends React.Component {
                                 <Form.Item
                                     name="captcha"
                                     noStyle
-                                    rules={[{ required: true, message: '请输入你的验证码!' }]}
+                                    rules={[{ required: true, message: '请输入你的验证码!' },
+                                    {
+                                        pattern: new RegExp('^\\d{6}$', 'g'),
+                                        message: '请输入六位验证码'
+                                    }
+                                ]}
                                 >
-                                    <Input />
+                                    <Input placeholder="验证码" />
                                 </Form.Item>
 
 
                             </Col>
                             <Col span={12}>
-                                <Button>Get captcha</Button>
+                                <Button>获取验证码</Button>
                             </Col>
                         </Row>
                     </Form.Item>
@@ -201,18 +222,18 @@ class RegisterForm extends React.Component {
                         name="agreement"
                         valuePropName="checked"
                         rules={[
-                            { validator: (_, value) => value ? Promise.resolve() : Promise.reject('Should accept agreement') },
+                            { validator: (_, value) => value ? Promise.resolve() : Promise.reject('请选中协议') },
                         ]}
                     >
                         <Checkbox>
-                            我已经阅读并同意<a href="htttp://www.baidu.com">服务协议</a>和<a href="htttp://www.baidu.com">隐私政策</a>
+                            我已经阅读并同意 <span className="blue-color">服务协议</span>和<span className="blue-color">隐私政策</span>
                         </Checkbox>
                     </Form.Item>
                     <Form.Item >
-                        <Button type="primary" htmlType="submit"> Register</Button>
+                        <Button type="primary" className="submit-btn" htmlType="submit"> Register</Button>
                     </Form.Item>
                     <Form.Item  >
-                        <Button type="primary" > 登陆</Button>
+                        <Button type="link" className="login-btn">登陆</Button>
                     </Form.Item>
                 </Form>
 
