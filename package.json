@@ -11,6 +11,7 @@
     "axios": "^0.19.2",
     "babel-plugin-import": "^1.13.0",
     "customize-cra": "^0.9.1",
+    "good-storage": "^1.1.1",
     "immutable": "^4.0.0-rc.12",
     "less": "^3.11.1",
     "less-loader": "^5.0.0",
