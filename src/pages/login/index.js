@@ -3,7 +3,7 @@ import { Form, Input, Button } from 'antd'
 import './index.less'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
-import { actionCreators } from './store';
+import { getUserInfo } from '../../store/actionCreators';
 class Login extends React.Component {
     componentDidMount() {
         //每次进入登录页清除之前的登录信息
@@ -97,7 +97,7 @@ const mapState = (state) => ({
 })
 const mapDispatch = (dispatch) => ({
     changeHomeData(params) {
-        dispatch(actionCreators.getUserInfo(params));
+        dispatch(getUserInfo(params));
     },
 });
 

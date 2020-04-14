@@ -1,9 +1,26 @@
 import { combineReducers } from 'redux-immutable'
+import { fromJS } from 'immutable';
+import * as constants from './constants';
 
-import {reducer as homeReducer } from '../pages/home/store/'
-import {reducer as loginReducer } from '../pages/login/store/'
+const defaultState = fromJS({
+	login: false
+});
+const changeLoginData = (state, action) => {
+	return state.merge({
+		username: fromJS(action.username),
+		Token: fromJS(action.Token),
+	});
+};
 
-export  default combineReducers({
-	home:homeReducer,
-	login:loginReducer
-})
+export  default combineReducers(
+	{
+		AITIME:(state = defaultState, action) => {
+			switch(action.type) {
+				case constants.LOGIN:
+					return changeLoginData(state, action);
+				default:
+					return state;
+			}
+		}
+	}
+)
