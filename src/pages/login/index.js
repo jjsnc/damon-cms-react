@@ -1,15 +1,20 @@
 import React from 'react'
 import { Form, Input, Button } from 'antd'
 import './index.less'
-
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-export default class Login extends React.Component {
+import { connect } from 'react-redux';
+import { actionCreators } from './store';
+class Login extends React.Component {
     componentDidMount() {
         //每次进入登录页清除之前的登录信息
     }
     loginReq = (params) => {
         window.location.href = '/#/';
     };
+    handleLogin = (params)=> {
+        let  {changeHomeData} = this.props
+        changeHomeData(params)
+    }
     render() {
         return (
             <div className="login-page">
@@ -18,7 +23,9 @@ export default class Login extends React.Component {
                         <img src='/assets/logo@2x.png' alt="官网logo" width="322" height="62"></img>
                     </div>
                     <h6 className="title">运用大数据和人工智能技术，助力信用生活</h6>
-                    <LoginForm />
+                    <LoginForm
+                    handleLogin ={this.handleLogin.bind(this)}
+                    />
                     <h6 className="title-tips">还没有账号？<span className='go-btn'>立即注册</span></h6>
                 </div>
 
@@ -29,15 +36,12 @@ export default class Login extends React.Component {
 
 class LoginForm extends React.Component {
     formRef = React.createRef();
-    onFinish = values => {
-        console.log(values);
-        window.location.href = '/#/';
-    };
     render() {
+       let {handleLogin} =  this.props
         return (
-            <Form ref={this.formRef} name="control-ref" onFinish={this.onFinish}>
+            <Form ref={this.formRef} name="control-ref" onFinish={handleLogin}>
                 <Form.Item
-                    name="username"
+                    name="UserName"
                     rules={[
                         {
                             required: true,
@@ -54,7 +58,7 @@ class LoginForm extends React.Component {
                     />
                 </Form.Item>
                 <Form.Item
-                    name="password"
+                    name="UserPsw"
                     rules={[
                         {
                             required: true,
@@ -79,3 +83,14 @@ class LoginForm extends React.Component {
         )
     }
 }
+
+const mapState = (state) => ({
+    // topicList: state.getIn(['home', 'topicList']),
+})
+const mapDispatch = (dispatch) => ({
+    changeHomeData(params) {
+        dispatch(actionCreators.getUserInfo(params));
+    },
+});
+
+export default connect(mapState, mapDispatch)(Login);
