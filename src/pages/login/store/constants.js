@@ -1,1 +1,1 @@
-export const LOGIN = 'home/LOGIN';
+export const LOGIN = 'login/LOGIN';

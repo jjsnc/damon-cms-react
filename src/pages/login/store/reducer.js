@@ -2,12 +2,14 @@ import { fromJS } from 'immutable';
 import * as constants from './constants';
 
 const defaultState = fromJS({
-	login: []
+	username: '',
+	Token : ''
 });
 
 const changeLoginData = (state, action) => {
 	return state.merge({
-		login: fromJS(action.topicList),
+		username: fromJS(action.username),
+		Token: fromJS(action.Token),
 	});
 };
 

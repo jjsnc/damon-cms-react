@@ -39,7 +39,15 @@ class LoginForm extends React.Component {
     render() {
        let {handleLogin} =  this.props
         return (
-            <Form ref={this.formRef} name="control-ref" onFinish={handleLogin}>
+            <Form 
+            ref={this.formRef} 
+            name="control-ref" 
+            onFinish={handleLogin}
+            initialValues={{
+                UserName: "荣世",
+                UserPsw: '111111',
+              }}
+            >
                 <Form.Item
                     name="UserName"
                     rules={[

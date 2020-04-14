@@ -1,22 +1,22 @@
 
 import axios from '../../../axios/index';
-// import * as constants from './constants';
-// import { fromJS } from 'immutable';
+import * as constants from './constants';
+import { fromJS } from 'immutable';
 
-// const getUserData = (result) => ({
-// 	type: constants.LOGIN,
-// 	login: result.topicList,
-// 	list : fromJS(result.list)
-// });
+const getUserData = (result) => ({
+	type: constants.LOGIN,
+	username: result.UserName,
+	Token : fromJS(result.Token)
+});
 
 
 
 export const getUserInfo = (params) => {
 	return (dispatch) => {
 		axios.post('/api/Intelligence/GetToken',params).then((res) => {
-			const result = res.data.data;
+			const result = res.data;
 			console.log(result)
-			// dispatch(getUserData(result));
+			dispatch(getUserData(result));
 		});
 	}
 }
