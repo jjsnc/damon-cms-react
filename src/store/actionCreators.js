@@ -1,11 +1,11 @@
 
 import axios from '../axios/index';
 import * as constants from './constants';
-import { fromJS } from 'immutable';
+// import { fromJS } from 'immutable';
 const getUserData = (result) => ({
 	type: constants.LOGIN,
 	username: result.UserName,
-	Token : fromJS(result.Token)
+	Token : result.Token
 });
 
 
