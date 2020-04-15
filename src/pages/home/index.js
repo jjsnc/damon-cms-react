@@ -4,24 +4,10 @@ import { connect } from 'react-redux';
 import { actionCreators } from './store';
 class Home extends React.Component {
     render() {
-        const { topicList } = this.props
+
         return (
             <div>
-                {
-                    topicList.map((item, index) => {
-                        return (
-                            <div key={index} to={'/detail/' + item.get('id')}>
-                                <div >
-                                    <img alt='' className='pic' src={item.get('imgUrl')} />
-                                    <div>
-                                        <h3 className='title'>{item.get('title')}</h3>
-                                        <p className='desc'>{item.get('desc')}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })
-                }
+              home
             </div>
         )
     }
