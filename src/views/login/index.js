@@ -114,7 +114,6 @@ class LoginForm extends React.Component {
 }
 
 const mapState = (state) => ({
-    // topicList: state.getIn(['home', 'topicList']),
 })
 const mapDispatch = (dispatch) => ({
 });
