@@ -3,7 +3,6 @@ import { Form, Input, Button } from 'antd'
 import './index.less'
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux';
-import { getUserInfo } from '../../store/actionCreators';
 import User from '@/damon/model/user'
 class Login extends React.Component {
     componentDidMount() {
@@ -18,6 +17,7 @@ class Login extends React.Component {
             this.loading = true
             await User.getToken(username, password)
             await this.getInformation()
+            window.location.href = '/#/';
             this.loading = false
             //   this.$router.push('/about')
             //   this.$message.success('登录成功')
@@ -116,9 +116,6 @@ const mapState = (state) => ({
     // topicList: state.getIn(['home', 'topicList']),
 })
 const mapDispatch = (dispatch) => ({
-    changeHomeData(params) {
-        dispatch(getUserInfo(params));
-    },
 });
 
 export default connect(mapState, mapDispatch)(Login);
