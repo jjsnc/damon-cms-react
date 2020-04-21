@@ -1,18 +1,18 @@
 import React from 'react'
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom'
-import App from '../App'
-import Login from '../pages/login'
-import Register from '../pages/register'
-import Admin from '../pages/admin'
-import Home from '../pages/home'
-import OrderDetail from "../pages/order/detail"
-import Common from '../pages/common'
-import Buttons from '../pages/ui/buttons'
-import Modals from '../pages/ui/modals'
-import Loadings from '../pages/ui/loadings'
-import Notice from '../pages/ui/notice'
-import Messages from '../pages/ui/messages'
-import Carousel from '../pages/ui/carousel'
+import App from '@/App'
+import Login from '@/views/login'
+import Register from '@/views/register'
+import Admin from '@/views/admin'
+import Home from '@/views/home'
+import OrderDetail from "@/views/order/detail"
+import Common from '@/views/common'
+import Buttons from '@/views/ui/buttons'
+import Modals from '@/views/ui/modals'
+import Loadings from '@/views/ui/loadings'
+import Notice from '@/views/ui/notice'
+import Messages from '@/views/ui/messages'
+import Carousel from '@/views/ui/carousel'
 export default class ERouter extends React.Component {
     render() {
         return (
