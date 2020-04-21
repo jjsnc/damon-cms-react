@@ -13,9 +13,13 @@ import Loadings from '@/views/ui/loadings'
 import Notice from '@/views/ui/notice'
 import Messages from '@/views/ui/messages'
 import Carousel from '@/views/ui/carousel'
+import { getToken } from '@/damon/util/token'
 export default class ERouter extends React.Component {
-    componentDidMount(){
-        
+    componentDidMount() {
+        let access_token = getToken("access_token")
+        if (!access_token) {
+            window.location.href = '#/login'
+        }
     }
     render() {
         return (
