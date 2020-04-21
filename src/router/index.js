@@ -14,6 +14,9 @@ import Notice from '@/views/ui/notice'
 import Messages from '@/views/ui/messages'
 import Carousel from '@/views/ui/carousel'
 export default class ERouter extends React.Component {
+    componentDidMount(){
+        
+    }
     render() {
         return (
             <HashRouter>
