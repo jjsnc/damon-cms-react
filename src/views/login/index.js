@@ -30,6 +30,7 @@ class Login extends React.Component {
     async getInformation() {
         try {
             // 尝试获取当前用户信息
+            /* eslint-disable-next-line */
             const user = await User.getPermissions()
         } catch (e) {
             console.log(e)
